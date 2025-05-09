@@ -22,7 +22,7 @@ from applications.alumniprofile.models import Batch, Degree, Profile, Constants
 from applications.news.models import News
 from applications.gallery.models import Album
 from applications.alumniprofile.views import create_new_education, get_education_form_field_names
-from applications.geolocation.views import addPoints
+# from applications.geolocation.views import addPoints
 import datetime
 from django.utils import timezone
 from itertools import chain
@@ -168,11 +168,12 @@ def new_register(request):
             if ('Higher' in HIGHER_EDU_STATUS and profile.working_status == HIGHER_EDU_STATUS):
                 create_new_education(request, profile)
 
-            map_points_status = addPoints({
-                'city': profile.city, 'state': profile.state,
-                'country': profile.country
-            })
-            print('Adding Map Point Status: ' + str(map_points_status))
+            # map_points_status = addPoints({
+            #     'city': profile.city, 
+            #     'state': profile.state,
+            #     'country': profile.country
+            # })
+            # print('Adding Map Point Status: ' + str(map_points_status))
 
             return render(request, 'AlumniConnect/confirm_email.html')
     else:

@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class JobPostingConfig(AppConfig):
-    name = 'job_posting'
+    name = 'applications.job_posting'

@@ -8,8 +8,8 @@
 <div class="mb-3 row">
     <div class="mb-3 col-sm-12 col-lg-6" >
         <label for="roll_no" class="form-label">Roll Number <span class="asteriskField">*</span></label>
-        <input type="text" class="form-control" name="roll_no" id="roll_no" pattern="[a-zA-Z0-9]{5,9}"
-        title="Enter institute roll number" value="{{form_data.roll_no}}" required/>
+        <input type="text" class="form-control" name="roll_no" id="roll_no" pattern="^\d{1}[A-Z]{2}\d{2}[A-Z]{2}\d{3}$"
+        title="Enter USN(1XX21XX001)" value="{{form_data.roll_no}}" required/>
         {% for error in form.roll_no.errors %}
         <div class="text-danger pl-1 pt-1">{{error|escape}}</div>
         {% endfor %}
@@ -108,6 +108,7 @@
 <div class="row">
     <div class="col-sm-12 col-lg-6 mb-3">
         <label for="admission-year" class="form-label">Year of Admission <span class="asteriskField">*</span></label>
+        <!-- <input type="number" name="year_of_admission" minlength="4" class="form-control" id="admission-year" required/>  -->
         <select name="year_of_admission" class="form-select custom-select"
             id="admission-year" required>
             <option value="">Select admission year</option>
@@ -121,6 +122,7 @@
     </div>
     <div class="col-sm-12 col-lg-6 mb-3">
         <label for="batch-year" class="form-label">Year of Passing <span class="asteriskField">*</span></label>
+        <!-- <input type="number" name="batch" minlength="4" class="form-control" id="batch-year" required/>  -->
         <select name="batch" class="form-select custom-select" id="batch-year"
             required>
             <option value="">Select year of passing</option>

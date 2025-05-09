@@ -232,11 +232,11 @@ class NewRegister(forms.ModelForm):
                 'Profile with this roll number already exists.'
             )
 
-        match = re.search('^[a-zA-Z0-9]{5,9}$', roll_no)
-        if not match:
-            raise forms.ValidationError(
-                'Please enter your valid institute roll number.'
-            )
+        # match = re.search('^\d{1}[A-Z]{2}\d{2}[A-Z]{2}\d{3}$', roll_no)
+        # if not match:
+        #     raise forms.ValidationError(
+        #         'Please enter your valid institute roll number.'
+        #     )
 
         return roll_no
     
@@ -310,7 +310,7 @@ class SignupForm(forms.ModelForm):
         username_value = self.cleaned_data['username'].lower()
 
         # Regex matching institution's roll no
-        x = re.search("^2[0-9][bmpid][cemdns][scem][0-2cmpdtoe]\d{2}[w]?$|^[0-2]\d[0-2]\d{4}$", username_value)
+        x = re.search(r"^\d[A-Z]{2}\d{2}[A-Z]{2}\d{3}$", username_value)
         if x == None:
             raise ValidationError(
                 'Please enter a valid roll no.'
