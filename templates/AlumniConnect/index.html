@@ -21,32 +21,12 @@
   <!-- <body id="page-top">  -->
     
   {% include 'globals/carousel.html' %}
-  <!--
-    <div class=" p-0 m-0 masthead-bg w-100 h-100 parallax"></div>
-    <header class="masthead text-center text-white d-flex">
-      <div class="container my-auto">
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h1 class="text-uppercase">
-              <img src= {% static "AlumniConnect/img/logo/alumb1.png" %} style="width: 4em; height: auto;">
-            </h1>
-            <hr>
-          </div>
-          <div class="col-lg-8 mx-auto">
-            <h1 class="text-uppercase">
-              <strong>ALUMNI CONNECT</strong>
-            </h1>
-          </div>
-        </div>
-      </div>
-    </header>
-  -->
 
     <section id="services" class="bg-primary" style="padding: 5rem 0;">
       <div class="container">
         <div class="row shadow-on-hover">
           <div class="col-lg-3 col-md-6 text-center">
-            <a class="d-inline-block h-100 w-100" style="color: transparent;" href="{% url 'publications:index' %}">
+            <a class="d-inline-block h-100 w-100" style="color: transparent;" href="{% url 'jobs:index' %}">
                 <div class="service-box mt-5 mb-3 mx-auto">
                     <i class="fas fa-4x fa-newspaper text-white mb-3 sr-icon-1"></i>
                     <h3 class="mb-3 text-white">JOB BOARD</h3>
@@ -98,10 +78,10 @@
           </h5>
         </div>
         <div class="text-center" style="margin-top: 1rem; font-family: Roboto, sans-serif">
-          <p><img class="img-fluid custom_img" src="{% static 'AlumniConnect/img/logo-min.png' %}" alt="Puneet Tandon"
+          <p><img class="img-fluid custom_img" src="{% static 'AlumniConnect/img/logo-min.jpg' %}" alt="Puneet Tandon"
               style="object-fit:cover; object-position:50% 0%;"></p>
-          <h5>(Team Name)</h5>
-          <h6>Developers Group</h6>
+          <h5>AlCon</h5>
+          <h6>Alumni Connect</h6>
         </div>
       </div>
     </section>
@@ -115,7 +95,7 @@
         ███████╗ ╚████╔╝ ███████╗██║ ╚████║   ██║   ███████║
         ╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝
 -->
-    <section class="bg-white" id="events" style="padding:2rem">
+    <!-- <section class="bg-white" id="events" style="padding:2rem">
       <div class="container">
         <div class="row">
           <div class="col-12 text-left mb-2">
@@ -182,7 +162,7 @@
           ╚═╝  ╚═══╝╚══════╝ ╚══╝╚══╝ ╚══════╝
     -->
 
-    <section class="bg-white" id="events" style="padding:2rem">
+    <!-- <section class="bg-white" id="events" style="padding:2rem">
       <div class="container">
 
         <div class="row">
@@ -218,9 +198,9 @@
           {% endfor %}
         </div>
       </div>
-    </section>  
+    </section>   -->
 
-    <section class="bg-primary" style="padding: 2rem ;" id="gallery">
+    <!-- <section class="bg-primary" style="padding: 2rem ;" id="gallery">
       <div class="container">
         <div class="row">
           <div class="col-12 text-left mb-2">
@@ -241,7 +221,7 @@
                   <h5 class="card-title font-weight-bold">{{album.title|striptags}}</h5>
     
                   <p class="m-2 font-italic  font-open-sans mb-3">
-                    <i class="fas fa-calendar-alt font-weight-lighter "></i>
+                    <i class="fas fa-calendar-alt font-weight-lighter "></i> 
                     {{album.created|date:"l, d M, o"}}
                     <br>
                     <i class="far fa-images"></i>
@@ -258,10 +238,11 @@
           {% endfor %}
         </div>
       </div>
-    </section>
+    </section> -->
+
 
   <!-- Toast -->
-  {% for message in messages %}
+  <!-- {% for message in messages %}
   <div class="row justify-content-center">
     <div style="position: fixed; bottom: 25px; left: 10px; z-index: 10;">
       <div class="toast bg-success {{ message.tags }}" id="alert_toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="1500">
@@ -274,7 +255,7 @@
       </div>
     </div>
   </div>
-  {% endfor %}
+  {% endfor %} -->
 
   {% include 'globals/footer.html' %}
 {% endblock %}

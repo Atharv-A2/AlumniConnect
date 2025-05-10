@@ -25,29 +25,18 @@ Gallery
 </section>
 
 <section class="bg-white" id="about" style="padding: 5rem 0 3rem;">
-
   <div class="container px-sm-0 px-md-4 px-xl-2 font-open-sans">
     <div class="row w-100 mx-auto">
-      {% for album in albums %}
+      {% for i in "12345678" %}
       <div class="col-sm-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-5 px-sm-2 px-md-4 px-lg-3 px-xl-2">
         <div class="card dpg-album-card w-100">
-          <img src="{{ album.thumb.url }}" alt="{{ album.title }}" class="card-image-top dpg-album-card-image w-100" />
-          <div class="card-body">
-            <h5 class="card-title">{{ album.title|safe }}</h5>
-            <i class="far fa-images"></i>{{ album.images_count }} Photo{{ album.images_count|pluralize }}
-            <p class="card-text">{{ album.description|safe|truncatechars:200 }}</p>
-          </div>
-          <div class="card-footer">
-            <h5 class="text-muted text-center m-0 py-2">
-              <a class="btn btn-primary btn-sm py-2 px-4" href="{% url 'gallery:album' album.slug %}">View Album</a>
-            </h5>
-          </div>
+          <img src="{% static 'Gallery/'|add:i|add:'.jpg' %}" alt="Image {{ i }}" class="card-image-top dpg-album-card-image w-100" />
         </div>
       </div>
       {% endfor %}
     </div>
   </div>
-
 </section>
+
 {% include 'globals/footer.html' %}
 {% endblock %}

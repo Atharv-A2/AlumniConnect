@@ -47,16 +47,14 @@
                                 </div>
                             </div>
 
-                            <br>
-
-                            {% if user.is_authenticated and user.username == roll_no %}
+                            <!-- {% if user.is_authenticated and user.username == roll_no %}
                             <div class="row">
                                 <a href="{% url 'profileedit' id=user.username %}"
                                     class="col-lg-6 btn btn-outline-primary btn-sm">Edit Profile</a>
                                 <a href="{% url 'change_password' %}" class="col-lg-6 btn btn-outline-primary btn-sm">Change
                                     Password</a>
                             </div>
-                            {% endif %}
+                            {% endif %} -->
 
                         </div>
                     </div>
@@ -117,9 +115,9 @@
                         </div>
                         <div class="card-body">
                             {% if user.is_authenticated and user.username == roll_no %}
-                            <p class="m-2 font-weight-normal font-open-sans mb-3" title="Alumni Registration Number">
+                            <p class="m-2 font-weight-normal font-open-sans mb-3" title="University Seat Number">
                                 <i class="fas fa-user"></i>
-                                &nbsp;Alumni Reg. No. : <b>{{ reg_no }}</b>
+                                &nbsp;USN : <b>{{ roll_no|upper }}</b>
                             </p>
                             {% endif %}
                             <p class="m-2 font-weight-normal font-open-sans mb-3">
@@ -187,10 +185,10 @@
                             <li class="list-group-item ml-3 mt-2 p-0">
                                 <div class="row mb-2" style="align-items:center">
                                     <div class="col-2" style="/*width: 60px; height: 60px;*/">
-                                        <img src="{% static 'AlumniConnect/img/logo-min.png' %}" alt="" class="img-fluid m-0 rounded">
+                                        <img src="https://image-upload.getmycollege.com/new-uploads/college/logo/sir-m-visvesvaraya-institute-of-technology-logo-338.jpg" alt="" class="img-fluid m-0 rounded">
                                     </div>
                                     <div class="col-auto text-wrap">
-                                        <h3>PDPM IIITDM Jabalpur</h3>
+                                        <h3>Sir M. Visvesvaraya Institute of Technology</h3>
                                         <h5>{{ programme }}, {{ year_of_admission }} - {{ batch_id }}, {{ branch }}
                                         </h5>
                                     </div>

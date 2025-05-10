@@ -24,9 +24,10 @@ class Constants:
 
     PROG_CHOICES = (
         ('B.Tech', 'B.Tech'),
-        ('B.Des', 'B.Des'),
-        ('M.Des', 'M.Des'),
-        ('M.Tech', 'M.Tech'),
+        ('B.E', 'B.E'),
+        ('B.Arch', 'B.Arch'),
+        ('MCA', 'MCA'),
+        ('MBA', 'MBA'),
         ('PhD', 'PhD')
     )
 

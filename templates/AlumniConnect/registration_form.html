@@ -7,7 +7,7 @@
 
 <div class="mb-3 row">
     <div class="mb-3 col-sm-12 col-lg-6" >
-        <label for="roll_no" class="form-label">Roll Number <span class="asteriskField">*</span></label>
+        <label for="roll_no" class="form-label">Univeristy Seat Number <span class="asteriskField">*</span></label>
         <input type="text" class="form-control" name="roll_no" id="roll_no" pattern="^\d{1}[A-Z]{2}\d{2}[A-Z]{2}\d{3}$"
         title="Enter USN(1XX21XX001)" value="{{form_data.roll_no}}" required/>
         {% for error in form.roll_no.errors %}

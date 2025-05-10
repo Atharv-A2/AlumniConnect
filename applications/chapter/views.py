@@ -1,4 +1,4 @@
-import zipfile, uuid
+import zipfile, uuid, openpyxl
 from datetime import datetime
 from zipfile import ZipFile
 from PIL import Image
@@ -20,7 +20,20 @@ def index(request):
     context = {
         'chapters': chapters,
     }
-    return render(request, 'chapter/index.html', context)
+    excel_file_path = r'static\files\AlumniFounders.xlsx'
+
+    workbook = openpyxl.load_workbook(excel_file_path)
+    sheet = workbook.active
+
+    data = []
+    for row in sheet.iter_rows(min_row=2, max_row=43, values_only=True):  # Skip the header row
+        name, description, photo_url = row
+        data.append({
+            'name': name,
+            'description': description,
+            'photo_url': photo_url,
+        })
+    return render(request, 'chapter/index.html', {'data': data})
 
 
 def chapter_data(request, id):

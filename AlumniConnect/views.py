@@ -123,7 +123,7 @@ def register(request):
 
 
 def reg_no_gen(degree_, spec_, year):
-    degree = {"B.Tech": "1", "B.Des": '2', "M.Tech": '3', "M.Des": '4', "PhD": '5'}
+    degree = {"B.Tech": "1", "B.E": '2', "B.Arch": '3', "MCA": '4', "MBA": '5', "PhD": '6'}
     spec = {"NA": '00', "CSE": "01", "ECE": "02", "ME": "03", "MT": "04", "NS": "05", "DS": "06"}
     last_reg_no = Profile.objects.filter(year_of_admission=year).order_by('user__date_joined').last()
     # print(last_reg_no)
@@ -175,7 +175,7 @@ def new_register(request):
             # })
             # print('Adding Map Point Status: ' + str(map_points_status))
 
-            return render(request, 'AlumniConnect/confirm_email.html')
+            return render(request, 'AlumniConnect/confirm_email.html', {'password': password})
     else:
         form = NewRegister()
 
