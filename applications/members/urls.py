@@ -19,4 +19,5 @@ urlpatterns = [
     path('autosearch/', views.autoSearch, name='autosearch'),
     path('mapsearch/', views.mapSearch, name='mapsearch'),
     path('', views.index, name='index'),
+    path('alumni-directory/', views.alumni_directory, name="alumni_directory")
 ]

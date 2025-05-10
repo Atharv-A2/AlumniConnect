@@ -73,6 +73,6 @@ if settings.DEBUG:
         path('__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
     
-admin.site.site_header = "IIITDMJ Alumni Association"
+admin.site.site_header = "Sir MVIT Alumni Association"
 admin.site.site_title = "Alumni Association"
 admin.site.index_title = "Alumni Association Admin"

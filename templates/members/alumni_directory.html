@@ -1,0 +1,57 @@
+{% extends 'globals/base.html' %}
+{% load static %}
+
+{% block title %}
+Alumni Directory
+{% endblock %}
+
+{% block body %}
+{% include 'globals/navbar.html' %}
+
+<style>
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card-img-top {
+  border-bottom: 1px solid #ddd;
+}
+</style>
+
+<div class="p-0 m-0 masthead-bg w-100 h-100 parallax" style="min-height:300px !important; height:300px !important; background-position-y: 300px;"></div>
+
+<header class="masthead text-center text-white d-flex" style="height:0px; min-height:300px;">
+  <div class="container my-auto" style="margin-bottom:50px !important;">
+    <div class="row">
+      <div class="col-lg-8 mx-auto align-middle">
+        <h1 class="text-uppercase mt-4">
+          <strong>ALUMNI DIRECTORY</strong>
+        </h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container mt-5">
+  <div class="row">
+    {% for alumnus in alumni %}
+    <div class="col-md-4 col-lg-3 mb-4">
+      <div class="card shadow-sm">
+        {% if alumnus.profile_picture %}
+        <img src="{{ alumnus.profile_picture.url }}" class="card-img-top" alt="{{ alumnus.name }}" style="object-fit: cover; height: 200px;">
+        {% else %}
+        <img src="{% static 'AlumniConnect/img/user.png' %}" class="card-img-top" alt="Default Image" style="object-fit: cover; height: 200px;">
+        {% endif %}
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ alumnus.name }}</h5>
+          <p class="card-text">{{ alumnus.city }}, {{ alumnus.state }}</p>
+          <a href="{% url 'profile:profile' alumnus.roll_no %}" class="btn btn-primary btn-sm">View Profile</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% include 'globals/footer.html' %}
+{% endblock %}

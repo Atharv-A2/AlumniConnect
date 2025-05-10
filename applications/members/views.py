@@ -54,6 +54,11 @@ def branch(request, programme, year, branch):
 def alumnibody(request):
     return render(request, "members/alumnibody.html")
 
+def alumni_directory(request):
+    # Fetch all alumni profiles
+    alumni = Profile.objects.all()
+    return render(request, 'members/alumni_directory.html', {'alumni': alumni})
+
 
 @login_required
 def search(request):
