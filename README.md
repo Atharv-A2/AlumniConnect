@@ -1,5 +1,5 @@
-# IIITDM Alumni Connect   
-  This web application aims to facilitate the Alumni Affairs of IIITDM Jabalpur. Please read the contributing guidelines before starting.
+# Sir MVIT Alumni Connect - ALCON  
+  This web application aims to facilitate the Alumni Affairs of SMVIT Bangalore. Please read the contributing guidelines before starting.
 
 ## Requirements
 
@@ -34,10 +34,8 @@
   ```
 ## How to run it?
 
-  * Fork the repository.
-  * Clone the repository to your local machine `$ git clone https://github.com/<your-github-username>/alumni.git`
-  * Change directory to alumni `$ cd alumni`
-  * Add a reference to the original repository `$ git remote add upstream https://github.com/BitByte-TPC/alumni.git`
+  * Clone the repository to your local machine `$ git clone https://github.com/<your-github-username>/AlumniConnect.git`
+  * Change directory to ALCON `$ cd AlCon`
   * Install the required version of Python for the project `$ pyenv install 3.9`
   * Set the local Python version for the project `$ pyenv local 3.9`
   * Install virtualenv `$ pip3 install virtualenv`  
